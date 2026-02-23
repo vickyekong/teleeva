@@ -1,0 +1,8 @@
+# MedConnect - Build locally, then deploy the 'out' folder to Netlify or your server
+# Optional: run build on Netlify (Build command: npm run build, Publish directory: out)
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
