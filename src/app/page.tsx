@@ -75,8 +75,14 @@ export default function LandingPage() {
               href="/subscribe"
               className="inline-flex items-center gap-2 rounded-full bg-[#0d9488] px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-[#0f766e]"
             >
-              View plans & sign up
+              Get started
               <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-[#0d9488] bg-transparent px-6 py-3.5 text-base font-semibold text-[#0d9488] transition hover:bg-[#f0fdfa]"
+            >
+              Access app
             </Link>
             <Link
               href="/#about"
@@ -502,13 +508,15 @@ export default function LandingPage() {
       <footer className="bg-[#fafaf9] py-8">
         <div className="mx-auto max-w-6xl px-4 lg:px-8">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-[#78716c]">
+            <Link href="/" className="hover:text-[#0d9488]">Home</Link>
             <Link href="/about" className="hover:text-[#0d9488]">About</Link>
+            <Link href="/how-it-works" className="hover:text-[#0d9488]">How it works</Link>
+            <Link href="/contact" className="hover:text-[#0d9488]">Contact</Link>
             <Link href="/blog" className="hover:text-[#0d9488]">Blog</Link>
             <Link href="/news" className="hover:text-[#0d9488]">News</Link>
-            <Link href="/achievements" className="hover:text-[#0d9488]">Achievements</Link>
             <a href="#prices" className="hover:text-[#0d9488]">Prices</a>
-            <a href="#contact" className="hover:text-[#0d9488]">Contact</a>
             <Link href="/subscribe" className="hover:text-[#0d9488]">Get started</Link>
+            <Link href="/login" className="hover:text-[#0d9488]">Access app</Link>
           </div>
         </div>
       </footer>

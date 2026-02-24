@@ -7,14 +7,13 @@ import { useState } from "react";
 import { BRAND_NAME } from "@/lib/constants";
 import { useAuth } from "@/contexts/AuthContext";
 
-const sitePaths = ["/", "/about", "/blog", "/news", "/achievements"];
+const sitePaths = ["/", "/about", "/how-it-works", "/contact", "/blog", "/news", "/achievements", "/subscribe"];
 const siteNavItems = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/news", label: "News" },
-  { href: "/achievements", label: "Achievements" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/contact", label: "Contact" },
   { href: "/#prices", label: "Prices" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 const appNavItems = [
@@ -28,7 +27,7 @@ export default function Navbar() {
   const router = useRouter();
   const { user, signOut } = useAuth();
   const [open, setOpen] = useState(false);
-  const isSite = sitePaths.includes(pathname) || pathname.startsWith("/blog/");
+  const isSite = sitePaths.includes(pathname) || pathname.startsWith("/blog/") || pathname.startsWith("/news");
   const navItems = isSite ? siteNavItems : appNavItems;
 
   const handleSignOut = async () => {
@@ -68,9 +67,14 @@ export default function Navbar() {
             </Link>
           ))}
           {isSite && (
-            <Link href="/subscribe" className={ctaClass}>
-              Get started
-            </Link>
+            <>
+              <Link href="/subscribe" className={ctaClass}>
+                Get started
+              </Link>
+              <Link href="/login" className="rounded-full border-2 border-[#0d9488] bg-transparent px-4 py-2 text-sm font-semibold text-[#0d9488] hover:bg-[#f0fdfa]">
+                Access app
+              </Link>
+            </>
           )}
         </div>
 
@@ -112,13 +116,22 @@ export default function Navbar() {
               </Link>
             ))}
             {isSite ? (
-              <Link
-                href="/subscribe"
-                onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-[#0d9488] px-4 py-2 text-center text-sm font-semibold text-white"
-              >
-                Get started
-              </Link>
+              <div className="mt-2 flex flex-col gap-2">
+                <Link
+                  href="/subscribe"
+                  onClick={() => setOpen(false)}
+                  className="rounded-full bg-[#0d9488] px-4 py-2 text-center text-sm font-semibold text-white"
+                >
+                  Get started
+                </Link>
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className="rounded-full border-2 border-[#0d9488] px-4 py-2 text-center text-sm font-semibold text-[#0d9488]"
+                >
+                  Access app
+                </Link>
+              </div>
             ) : user ? (
               <button
                 type="button"

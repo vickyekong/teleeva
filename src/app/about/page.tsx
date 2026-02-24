@@ -17,6 +17,13 @@ export default function AboutPage() {
         <p className="mt-4 text-lg text-[#57534e]">{BRAND.tagline}</p>
 
         <section className="mt-12">
+          <h2 className="text-xl font-semibold text-[#1c1917]">The problem we solve</h2>
+          <p className="mt-3 text-[#57534e] leading-relaxed">
+            Healthcare is often fragmented: symptom checks, prescriptions, nurse visits, and emergency response live in different places. Patients repeat their story, lose track of care, and struggle to get timely help. Providers work across disconnected tools. {BRAND_NAME} unifies AI-guided triage, verified prescriptions, at-home nursing, and one-tap emergency support so that everyone gets coordinated care from a single platform.
+          </p>
+        </section>
+
+        <section className="mt-10">
           <h2 className="text-xl font-semibold text-[#1c1917]">Our mission</h2>
           <p className="mt-3 text-[#57534e] leading-relaxed">{BRAND.mission}</p>
         </section>
@@ -84,6 +91,9 @@ export default function AboutPage() {
           >
             Get started
             <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/login" className="inline-flex items-center rounded-full border-2 border-[#0d9488] px-6 py-3 font-semibold text-[#0d9488] hover:bg-[#f0fdfa]">
+            Access app
           </Link>
           <Link href="/" className="inline-flex items-center rounded-full border border-[#e7e5e4] bg-white px-6 py-3 font-medium text-[#1c1917] hover:bg-[#fafaf9]">
             Back to home
